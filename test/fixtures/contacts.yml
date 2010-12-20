@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  data_nasc: 2010-12-19 20:54:05
+  profession: MyString
+  company: MyString
+  user_id: 1
+
+two:
+  name: MyString
+  data_nasc: 2010-12-19 20:54:05
+  profession: MyString
+  company: MyString
+  user_id: 1

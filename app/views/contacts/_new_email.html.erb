@@ -1,0 +1,21 @@
+<h1>Email</h1>
+
+<%= form_for(email) do |f| %>
+  
+   <%= f.error_messages %>
+    
+  <%= f.hidden_field :contact_id  %>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+ <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+

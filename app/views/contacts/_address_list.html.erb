@@ -1,0 +1,32 @@
+
+
+<table>
+  <tr>
+    <th>Street</th>
+    <th>Number</th>
+    <th>District</th>
+    <th>Complement</th>
+    <th>Country</th>
+    <th>Cep</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% 	addresses.each do |address| %>
+  <tr >
+    <td><%= address.street %></td>
+    <td><%= address.number %></td>
+    <td><%= address.district %></td>
+    <td><%= address.complement %></td>
+    <td><%= address.country %></td>
+    <td><%= address.cep %></td>
+    <td><%= link_to 'Show', address %></td>
+    <td><%= link_to 'Edit', edit_address_path(address) %></td>
+    <td><%= link_to 'Destroy', address, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

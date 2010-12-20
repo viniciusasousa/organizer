@@ -1,0 +1,25 @@
+<h1>New contact</h1>
+
+
+<%= form_for(contact) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.hidden_field :user_id  %>	
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :profession %><br />
+    <%= f.text_field :profession %>
+  </div>
+  <div class="field">
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </div>
+  <div class="actions">
+    <%= f.submit "New Contact" %>
+  </div>
+<% end %>
+
+

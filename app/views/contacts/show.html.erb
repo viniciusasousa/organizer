@@ -1,0 +1,42 @@
+<h1>Contact</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <b>Data nasc:</b>
+  <%= @contact.data_nasc %>
+</p>
+
+<p>
+  <b>Profession:</b>
+  <%= @contact.profession %>
+</p>
+
+<p>
+  <b>Company:</b>
+  <%= @contact.company %>
+</p>
+<input type="text" name="address" id="address" style="display:none" />
+<input type="submit" id="addressButton" style="display:none" />
+
+<!-- enderecos -->
+<%= render :partial =>"address_list", :locals=>{:addresses=>Address.find_all_by_contact_id(@contact.id)} %>
+
+<%= render :partial =>"new_address", :locals=>{:address=>Address.new (:contact_id =>@contact.id )} %>
+
+
+<!-- telefones -->
+<%= render :partial =>"phone_list", :locals=>{:phones=>Phone.find_all_by_contact_id(@contact.id)} %>
+<%= render :partial =>"new_phone", :locals=>{:phone=>Phone.new (:contact_id =>@contact.id )} %>
+
+
+<!-- emails -->
+<%= render :partial =>"email_list", :locals=>{:emails=>Email.find_all_by_contact_id(@contact.id)} %>
+<%= render :partial =>"new_email", :locals=>{:email=>Email.new (:contact_id =>@contact.id )} %>
+
+<%= link_to 'Back', user_path(User.find_by_id(@contact.user_id))%>
+

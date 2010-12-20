@@ -1,0 +1,62 @@
+<h1>Address</h1>
+
+<script type="text/javascript" >
+
+     function carregarCoord(){
+
+		
+      document.getElementById("address").value  =
+      document.getElementById("address_street").value;
+      
+      alert(document.getElementById("address").value );
+     
+      document.getElementById("addressButton").click();
+
+
+     }
+
+</script>
+    
+
+
+<%= form_for(address) do |f| %>
+  
+  <%= f.error_messages %>
+  
+  <%= f.hidden_field :contact_id  %>
+
+  <div class="field">
+    <%= f.label :street %><br />
+    <input id="address_street" name="address[street]" size="30" type="text" onblur="carregarCoord()" />
+  </div>
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :district %><br />
+    <%= f.text_field :district %>
+  </div>
+  <div class="field">
+    <%= f.label :complement %><br />
+    <%= f.text_field :complement %>
+  </div>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%= f.text_field :country %>
+  </div>
+  <div class="field">
+    <%= f.label :cep %><br />
+    <%= f.text_field :cep %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<form id="addressForm" action="#">
+  	  <input type="text" name="address" id="address" style="display:none" />
+      <input type="submit" id="addressButton" style="display:none" />
+</form>
+
+<div id="map" ></div>
